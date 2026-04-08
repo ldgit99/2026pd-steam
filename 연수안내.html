@@ -111,6 +111,47 @@
       border-radius: 3px;
       flex-shrink: 0;
     }
+    .subsection-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 28px 0 16px;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .photo-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(14, 30, 63, 0.08);
+    }
+    .photo-card img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: #dfe6f3;
+    }
+    .photo-caption {
+      padding: 14px 16px 16px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.5;
+    }
+    @media (max-width: 720px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+      .photo-card img {
+        height: 240px;
+      }
+    }
 
     /* ── OVERVIEW CARDS ── */
     .overview-grid {
@@ -873,6 +914,18 @@
       <span class="tag tag-lecture" style="font-size:0.82rem; padding:5px 14px;">강의 16h</span>
       <span class="tag tag-participate" style="font-size:0.82rem; padding:5px 14px;">참여 6h</span>
       <span class="tag tag-practice" style="font-size:0.82rem; padding:5px 14px;">실습 8h</span>
+    </div>
+
+    <h3 class="subsection-title">연수 관련 활동 사진</h3>
+    <div class="photo-grid">
+      <figure class="photo-card">
+        <img src="./1.png" alt="디지털 센서 활용 풍력 발전기 만들기 활동 사진">
+        <figcaption class="photo-caption">디지털 센서 활용 풍력 발전기 만들기</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <img src="./2.png" alt="디지털 센서 활용 내진설계 구조물 만들기 활동 사진">
+        <figcaption class="photo-caption">디지털 센서 활용 내진설계 구조물 만들기</figcaption>
+      </figure>
     </div>
   </div>
 </section>
