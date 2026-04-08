@@ -64,22 +64,6 @@
       opacity: 0.85;
       margin-bottom: 36px;
     }
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .stat-box {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 12px;
-      padding: 16px 28px;
-      min-width: 130px;
-    }
-    .stat-box .num { font-size: 1.9rem; font-weight: 800; color: #7ec8f7; }
-    .stat-box .label { font-size: 0.78rem; opacity: 0.85; margin-top: 2px; }
-
     /* ── NAV ── */
     nav {
       position: sticky;
@@ -368,6 +352,16 @@
     }
     .tt-table tr:last-child td { border-bottom: none; }
 
+    .tt-sub-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .online-badge {
       display: inline-block;
       background: var(--online);
@@ -544,32 +538,14 @@
   <div class="hero-badge">경북대학교 AI융합교육대학원</div>
   <h1>2026 <span>SW-AI교육</span><br>역량강화 연수</h1>
   <p class="subtitle">디지털 센서 및 바이브 코딩 활용 AI융합교육 설계 역량 강화 연수</p>
-  <div class="hero-stats">
-    <div class="stat-box">
-      <div class="num">30h</div>
-      <div class="label">총 연수 시간</div>
-    </div>
-    <div class="stat-box">
-      <div class="num">40명</div>
-      <div class="label">총 모집 인원</div>
-    </div>
-    <div class="stat-box">
-      <div class="num">50만원</div>
-      <div class="label">1인당 연수 경비</div>
-    </div>
-    <div class="stat-box">
-      <div class="num">8/10~12</div>
-      <div class="label">집합 연수 일정</div>
-    </div>
-  </div>
 </header>
 
 <!-- NAV -->
 <nav>
   <a href="#overview">연수 개요</a>
   <a href="#goals">연수 목표</a>
-  <a href="#curriculum">교과 편성</a>
   <a href="#timetable">세부 시간표</a>
+  <a href="#curriculum">교과 편성</a>
   <a href="#completion">이수 기준</a>
   <a href="#contact">문의처</a>
 </nav>
@@ -644,6 +620,179 @@
   </div>
 </section>
 
+<!-- TIMETABLE -->
+<section id="timetable">
+  <div class="container">
+    <h2 class="section-title">세부 시간표</h2>
+
+    <!-- Online -->
+    <p class="tt-sub-title"><span class="online-badge">온라인 연수</span> 공통 강의 (1기/2기 동일, 40명)</p>
+    <div style="overflow-x:auto; margin-bottom:8px;">
+      <table class="tt-table">
+        <thead>
+          <tr>
+            <th>일정</th>
+            <th>1교시</th>
+            <th>2교시</th>
+            <th>3교시</th>
+            <th>4교시</th>
+            <th>5교시</th>
+            <th>6교시</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day-cell" rowspan="2">8월 3일(월)<br>~ 8월 9일(일)<br><small style="font-weight:400;">(상시 수강)</small></td>
+            <td colspan="3" class="lecture-cell">
+              <strong>디지털 기반의 AI 융합교육</strong>
+              <span>한국교원대 권용주</span>
+            </td>
+            <td colspan="3" class="lecture-cell">
+              <strong>오렌지3를 활용한 AI융합교육</strong>
+              <span>서울교동초 정유미</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="lecture-cell">
+              <strong>SW를 활용한 STEM/STEAM 교육의 이해와 적용 사례</strong>
+              <span>경북대 이효녕</span>
+            </td>
+            <td colspan="3" class="lecture-cell">
+              <strong>VR을 활용한 실감형 AI융합교육</strong>
+              <span>서울길원초 최섭</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note" style="margin-bottom:28px;">비대면 온라인 강의(동영상): 경북대학교 학습관리시스템(LMS) — 해당 기간 상시 수강</div>
+
+    <!-- Group 1 -->
+    <p class="tt-sub-title"><span class="gather-badge">집합 연수</span> 1기 (20명) · 경북대학교 제2과학관 130호</p>
+    <div style="overflow-x:auto; margin-bottom:8px;">
+      <table class="tt-table">
+        <thead>
+          <tr>
+            <th>일</th>
+            <th>준비<br>09:00~</th>
+            <th>1교시<br>09:30~10:20</th>
+            <th>2교시<br>10:30~11:20</th>
+            <th>3교시<br>11:30~12:20</th>
+            <th>점심<br>12:20~13:30</th>
+            <th>4교시<br>13:30~14:20</th>
+            <th>5교시<br>14:30~15:20</th>
+            <th>6교시<br>15:30~16:20</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day-cell">1일차<br><small>(8/10)</small></td>
+            <td class="prep-cell">등록<br>개강식</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>AI융합교육의 방향과 과제</strong>
+              <span>공주대 권혁수</span>
+            </td>
+            <td class="lunch-cell">점심</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>피지컬AI 기반 AI융합교육의 실제</strong>
+              <span>천재교육 김황</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="day-cell">2일차<br><small>(8/11)</small></td>
+            <td class="prep-cell">등록</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>디지털 센서 활용 풍력 발전기 만들기</strong>
+              <span>구미산동고 엄흥진</span>
+            </td>
+            <td class="lunch-cell">점심</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>디지털 센서 활용 내진설계 구조물 만들기</strong>
+              <span>오성중 이봉규</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="day-cell">3일차<br><small>(8/12)</small></td>
+            <td class="prep-cell">등록</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>Human-AI Agency를 위한 수업 설계</strong>
+              <span>경북대 이동국</span>
+            </td>
+            <td class="lunch-cell">점심</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>바이브 코딩 활용 수업·평가 콘텐츠 설계</strong>
+              <span>대륜고 홍대화</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Group 2 -->
+    <p class="tt-sub-title" style="margin-top:24px;"><span class="gather-badge">집합 연수</span> 2기 (20명) · 경북대학교 제2과학관 223호</p>
+    <div style="overflow-x:auto; margin-bottom:8px;">
+      <table class="tt-table">
+        <thead>
+          <tr>
+            <th>일</th>
+            <th>준비<br>09:00~</th>
+            <th>1교시<br>09:30~10:20</th>
+            <th>2교시<br>10:30~11:20</th>
+            <th>3교시<br>11:30~12:20</th>
+            <th>점심<br>12:20~13:30</th>
+            <th>4교시<br>13:30~14:20</th>
+            <th>5교시<br>14:30~15:20</th>
+            <th>6교시<br>15:30~16:20</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day-cell">1일차<br><small>(8/10)</small></td>
+            <td class="prep-cell">등록<br>개강식</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>피지컬AI 기반 AI융합교육의 실제</strong>
+              <span>천재교육 김황</span>
+            </td>
+            <td class="lunch-cell">점심</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>AI융합교육의 방향과 과제</strong>
+              <span>공주대 권혁수</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="day-cell">2일차<br><small>(8/11)</small></td>
+            <td class="prep-cell">등록</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>디지털 센서 활용 내진설계 구조물 만들기</strong>
+              <span>오성중 이봉규</span>
+            </td>
+            <td class="lunch-cell">점심</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>디지털 센서 활용 풍력 발전기 만들기</strong>
+              <span>구미산동고 엄흥진</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="day-cell">3일차<br><small>(8/12)</small></td>
+            <td class="prep-cell">등록</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>바이브 코딩 활용 수업·평가 콘텐츠 설계</strong>
+              <span>대륜고 홍대화</span>
+            </td>
+            <td class="lunch-cell">점심</td>
+            <td colspan="3" class="lecture-cell">
+              <strong>Human-AI Agency를 위한 수업 설계</strong>
+              <span>경북대 이동국</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note" style="margin-top:16px;">※ 강의 일정과 강사는 사정에 따라 변경될 수 있습니다.</div>
+  </div>
+</section>
+
 <!-- CURRICULUM -->
 <section id="curriculum">
   <div class="container">
@@ -694,12 +843,12 @@
           </tr>
           <tr>
             <td><strong>디지털 센서 활용 풍력 발전기 만들기</strong></td>
-            <td style="text-align:left;">· 디지털 센서 활용의 기초<br>· 데이터를 활용한 풍력 발전기 제작 개선</td>
+            <td style="text-align:left;">· 디지털 센서(이지메이커) 활용의 기초<br>· 데이터를 활용한 풍력 발전기 제작 개선</td>
             <td>3</td><td>1</td><td>-</td><td>2</td>
           </tr>
           <tr>
             <td><strong>디지털 센서 활용 내진설계 구조물 만들기</strong></td>
-            <td style="text-align:left;">· 디지털 센서 활용의 기초<br>· 데이터를 활용한 내진설계 구조물 제작 및 개선</td>
+            <td style="text-align:left;">· 디지털 센서(이지메이커) 활용의 기초<br>· 데이터를 활용한 내진설계 구조물 제작 및 개선</td>
             <td>3</td><td>1</td><td>-</td><td>2</td>
           </tr>
           <tr>
@@ -725,195 +874,6 @@
       <span class="tag tag-participate" style="font-size:0.82rem; padding:5px 14px;">참여 6h</span>
       <span class="tag tag-practice" style="font-size:0.82rem; padding:5px 14px;">실습 8h</span>
     </div>
-  </div>
-</section>
-
-<!-- TIMETABLE -->
-<section id="timetable">
-  <div class="container">
-    <h2 class="section-title">세부 시간표</h2>
-
-    <div class="tt-tabs">
-      <button class="tt-tab active" onclick="showTab('online', this)">온라인 연수 (공통)</button>
-      <button class="tt-tab" onclick="showTab('group1', this)">집합 연수 — 1기</button>
-      <button class="tt-tab" onclick="showTab('group2', this)">집합 연수 — 2기</button>
-    </div>
-
-    <!-- Online -->
-    <div id="online" class="tt-panel active">
-      <span class="online-badge">온라인 · LMS</span>
-      <div style="overflow-x:auto;">
-        <table class="tt-table">
-          <thead>
-            <tr>
-              <th>일정</th>
-              <th colspan="2">1~2교시</th>
-              <th colspan="2">3~4교시</th>
-              <th colspan="2">5~6교시</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="day-cell">8월 3일(월)<br>~ 8월 9일(일)<br><small style="font-weight:400;">(상시 수강)</small></td>
-              <td colspan="2" class="lecture-cell">
-                <strong>디지털 기반의 AI 융합교육</strong>
-                <span>한국교원대 권용주</span>
-              </td>
-              <td colspan="2" class="lecture-cell">
-                <strong>SW를 활용한 STEM/STEAM 교육의 이해와 적용 사례</strong>
-                <span>경북대 이효녕</span>
-              </td>
-              <td colspan="2" class="lecture-cell">
-                <strong>오렌지3를 활용한 AI융합교육</strong>
-                <span>서울교동초 정유미</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="day-cell"></td>
-              <td colspan="6" class="lecture-cell">
-                <strong>VR을 활용한 실감형 AI융합교육</strong>
-                <span>서울길원초 최섭</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="note">비대면 온라인 강의(동영상): 경북대학교 학습관리시스템(LMS) — 해당 기간 상시 수강</div>
-    </div>
-
-    <!-- Group 1 -->
-    <div id="group1" class="tt-panel">
-      <span class="gather-badge">집합 · 1기 (20명) · 제2과학관 130호</span>
-      <div style="overflow-x:auto;">
-        <table class="tt-table">
-          <thead>
-            <tr>
-              <th>일</th>
-              <th>준비<br>09:00~</th>
-              <th>1교시<br>09:30~10:20</th>
-              <th>2교시<br>10:30~11:20</th>
-              <th>3교시<br>11:30~12:20</th>
-              <th>점심<br>12:20~13:30</th>
-              <th>4교시<br>13:30~14:20</th>
-              <th>5교시<br>14:30~15:20</th>
-              <th>6교시<br>15:30~16:20</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="day-cell">1일차<br><small>(8/10)</small></td>
-              <td class="prep-cell">등록<br>개강식</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>AI융합교육의 방향과 과제</strong>
-                <span>공주대 권혁수</span>
-              </td>
-              <td class="lunch-cell">점심</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>피지컬AI 기반 AI융합교육의 실제</strong>
-                <span>천재교육 김황</span>
-              </td>
-            </tr>
-            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 130호</td></tr>
-            <tr>
-              <td class="day-cell">2일차<br><small>(8/11)</small></td>
-              <td class="prep-cell">등록</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>디지털 센서 활용 풍력 발전기 만들기</strong>
-                <span>구미산동고 엄흥진</span>
-              </td>
-              <td class="lunch-cell">점심</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>디지털 센서 활용 내진설계 구조물 만들기</strong>
-                <span>오성중 이봉규</span>
-              </td>
-            </tr>
-            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 130호</td></tr>
-            <tr>
-              <td class="day-cell">3일차<br><small>(8/12)</small></td>
-              <td class="prep-cell">등록</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>Human-AI Agency를 위한 수업 설계</strong>
-                <span>경북대 이동국</span>
-              </td>
-              <td class="lunch-cell">점심</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>바이브 코딩 활용 수업·평가 콘텐츠 설계</strong>
-                <span>대륜고 홍대화</span>
-              </td>
-            </tr>
-            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 130호</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Group 2 -->
-    <div id="group2" class="tt-panel">
-      <span class="gather-badge">집합 · 2기 (20명) · 제2과학관 223호</span>
-      <div style="overflow-x:auto;">
-        <table class="tt-table">
-          <thead>
-            <tr>
-              <th>일</th>
-              <th>준비<br>09:00~</th>
-              <th>1교시<br>09:30~10:20</th>
-              <th>2교시<br>10:30~11:20</th>
-              <th>3교시<br>11:30~12:20</th>
-              <th>점심<br>12:20~13:30</th>
-              <th>4교시<br>13:30~14:20</th>
-              <th>5교시<br>14:30~15:20</th>
-              <th>6교시<br>15:30~16:20</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="day-cell">1일차<br><small>(8/10)</small></td>
-              <td class="prep-cell">등록<br>개강식</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>피지컬AI 기반 AI융합교육의 실제</strong>
-                <span>천재교육 김황</span>
-              </td>
-              <td class="lunch-cell">점심</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>AI융합교육의 방향과 과제</strong>
-                <span>공주대 권혁수</span>
-              </td>
-            </tr>
-            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 223호</td></tr>
-            <tr>
-              <td class="day-cell">2일차<br><small>(8/11)</small></td>
-              <td class="prep-cell">등록</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>디지털 센서 활용 내진설계 구조물 만들기</strong>
-                <span>오성중 이봉규</span>
-              </td>
-              <td class="lunch-cell">점심</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>디지털 센서 활용 풍력 발전기 만들기</strong>
-                <span>구미산동고 엄흥진</span>
-              </td>
-            </tr>
-            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 223호</td></tr>
-            <tr>
-              <td class="day-cell">3일차<br><small>(8/12)</small></td>
-              <td class="prep-cell">등록</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>바이브 코딩 활용 수업·평가 콘텐츠 설계</strong>
-                <span>대륜고 홍대화</span>
-              </td>
-              <td class="lunch-cell">점심</td>
-              <td colspan="3" class="lecture-cell">
-                <strong>Human-AI Agency를 위한 수업 설계</strong>
-                <span>경북대 이동국</span>
-              </td>
-            </tr>
-            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 223호</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="note" style="margin-top:16px;">※ 강의 일정과 강사는 사정에 따라 변경될 수 있습니다.</div>
   </div>
 </section>
 
@@ -953,36 +913,25 @@
     </div>
 
     <h3 style="font-size:1rem; color:var(--primary); margin-bottom:14px; font-weight:700;">문의처</h3>
-    <div class="contact-grid">
-      <div class="address-card">
-        <div class="c-label">연수 장소 주소</div>
-        <div class="addr">대구광역시 북구 대학로 80 경북대학교 교육연수원</div>
-      </div>
-      <div class="contact-card">
-        <div class="c-label">연수 행정 관련 문의</div>
-        <div class="c-name">김성룡 주무관</div>
-        <div class="c-detail">경북대학교 교육연수원</div>
-        <div class="c-phone">📞 053-950-6899</div>
-      </div>
-      <div class="contact-card">
-        <div class="c-label">연수 운영 관련 문의</div>
-        <div class="c-name">이혜영 주무관</div>
-        <div class="c-detail">AI융합교육전공 사무실</div>
-        <div class="c-phone">📞 053-950-5916</div>
-      </div>
-      <div class="contact-card">
-        <div class="c-label">연수 책임 교수</div>
-        <div class="c-name">이효녕 교수</div>
-        <div class="c-detail">경북대학교 교육대학원<br>AI융합교육전공</div>
-        <div class="c-phone">📞 053-950-5917</div>
-      </div>
-      <div class="contact-card">
-        <div class="c-label">연수 운영 교수</div>
-        <div class="c-name">이동국 교수</div>
-        <div class="c-detail">경북대학교 사범대학<br>정보·컴퓨터교육과</div>
-        <div class="c-phone">📞 053-950-5845</div>
-      </div>
+    <ul class="overview-bullets" style="margin-bottom:28px;">
+      <li><span class="ob-key">연수 장소</span> 대구광역시 북구 대학로 80, 제2과학관 130호, 223호</li>
+      <li><span class="ob-key">행정 문의</span> 김성룡 주무관 (경북대학교 교육연수원) &nbsp;📞 053-950-6899</li>
+      <li><span class="ob-key">운영 문의</span> 이혜영 주무관 (AI융합교육전공 사무실) &nbsp;📞 053-950-5916</li>
+      <li><span class="ob-key">책임 교수</span> 이효녕 교수 (경북대학교 교육대학원 AI융합교육전공) &nbsp;📞 053-950-5917</li>
+      <li><span class="ob-key">운영 교수</span> 이동국 교수 (경북대학교 사범대학 정보·컴퓨터교육과) &nbsp;📞 053-950-5845</li>
+    </ul>
+
+    <h3 style="font-size:1rem; color:var(--primary); margin-bottom:14px; font-weight:700;">오시는 길 — 경북대학교 제2과학관</h3>
+    <div style="border-radius:14px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.0!2d128.6068!3d35.8892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660b9e6b5d1a45%3A0x1234!2z6rK96ri464yA7ZWZ6rWQ7KCV7JuQ7JmA!5e0!3m2!1sko!2skr!4v1"
+        width="100%" height="360" style="border:0; display:block;"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="경북대학교 제2과학관 위치">
+      </iframe>
     </div>
+    <p style="font-size:0.82rem; color:var(--muted); margin-top:10px;">📍 대구광역시 북구 대학로 80 경북대학교 제2과학관 (130호, 223호)</p>
   </div>
 </section>
 
@@ -992,14 +941,6 @@
   경북대학교 교육대학원 AI융합교육전공 · 대구광역시 북구 대학로 80
 </footer>
 
-<script>
-  function showTab(id, btn) {
-    document.querySelectorAll('.tt-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tt-tab').forEach(b => b.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    btn.classList.add('active');
-  }
-</script>
 
 </body>
 </html>
