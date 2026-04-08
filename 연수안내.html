@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 SW-AI교육 역량강화 연수 | 경북대학교</title>
+  <style>
+    :root {
+      --primary: #1a3a6e;
+      --accent: #e84c3d;
+      --accent2: #f39c12;
+      --bg: #f4f6fa;
+      --card: #ffffff;
+      --text: #222;
+      --muted: #666;
+      --border: #dde3ef;
+      --online: #2ecc71;
+      --gather: #3498db;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0d2452 0%, #1a3a6e 60%, #2255a4 100%);
+      color: #fff;
+      text-align: center;
+      padding: 72px 24px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 4px 18px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .hero h1 span { color: #7ec8f7; }
+    .hero .subtitle {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      margin-bottom: 36px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 16px 28px;
+      min-width: 130px;
+    }
+    .stat-box .num { font-size: 1.9rem; font-weight: 800; color: #7ec8f7; }
+    .stat-box .label { font-size: 0.78rem; opacity: 0.85; margin-top: 2px; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary);
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      padding: 0 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    nav a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 14px 14px;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+    }
+    nav a:hover { color: #fff; border-bottom-color: #7ec8f7; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+
+    section { padding: 60px 0; }
+    section:nth-child(even) { background: #eef1f8; }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 28px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent2) 100%);
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ── OVERVIEW CARDS ── */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .ov-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 24px 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .ov-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .ov-card .ov-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .ov-card .ov-value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .ov-card .ov-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ── GOALS ── */
+    .goals-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .goal-item {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 24px;
+      border-left: 5px solid var(--primary);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .goal-item .g-num {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.9rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── SESSION TABLE ── */
+    .session-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .session-table th {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 10px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .session-table td {
+      padding: 11px 10px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .session-table tr:last-child td { border-bottom: none; }
+    .session-table tr:hover td { background: #f0f4ff; }
+    .session-table .total-row td {
+      background: #eef1f8;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* ── CURRICULUM CARDS ── */
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .cur-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cur-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+    .cur-card .cur-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .cur-card .cur-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      flex: 1;
+    }
+    .cur-card .cur-hours {
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+    .cur-card .cur-content {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .cur-card .cur-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .tag {
+      font-size: 0.72rem;
+      padding: 2px 9px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .tag-lecture { background: #dbeafe; color: #1d4ed8; }
+    .tag-participate { background: #dcfce7; color: #166534; }
+    .tag-practice { background: #fef9c3; color: #854d0e; }
+
+    /* ── TIMETABLE ── */
+    .tt-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .tt-tab {
+      padding: 9px 22px;
+      border-radius: 8px;
+      border: 2px solid var(--border);
+      background: var(--card);
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .tt-tab.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .tt-panel { display: none; }
+    .tt-panel.active { display: block; }
+
+    .tt-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.83rem;
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .tt-table th {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 8px;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+    .tt-table td {
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      vertical-align: middle;
+    }
+    .tt-table .day-cell {
+      font-weight: 700;
+      background: #f0f4ff;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .tt-table .prep-cell {
+      background: #fef9c3;
+      font-size: 0.78rem;
+      color: #854d0e;
+      font-weight: 600;
+    }
+    .tt-table .lunch-cell {
+      background: #f0fdf4;
+      color: #166534;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .tt-table .lecture-cell {
+      background: #eff6ff;
+      color: #1e3a8a;
+    }
+    .tt-table .lecture-cell strong { display: block; font-size: 0.82rem; margin-bottom: 2px; }
+    .tt-table .lecture-cell span { font-size: 0.75rem; color: var(--muted); }
+    .tt-table .room-row td {
+      background: #f8faff;
+      font-size: 0.75rem;
+      color: var(--muted);
+      padding: 4px 8px;
+      font-style: italic;
+      border-bottom: 2px solid var(--border);
+    }
+    .tt-table tr:last-child td { border-bottom: none; }
+
+    .online-badge {
+      display: inline-block;
+      background: var(--online);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .gather-badge {
+      display: inline-block;
+      background: var(--gather);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .note {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      background: #fffbeb;
+      border-left: 3px solid var(--accent2);
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* ── INSTRUCTORS ── */
+    .instructor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .inst-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .inst-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #2255a4);
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+    .inst-name { font-weight: 800; font-size: 1rem; color: var(--primary); }
+    .inst-rank { font-size: 0.8rem; color: var(--muted); margin: 2px 0; }
+    .inst-subject { font-size: 0.78rem; color: var(--text); margin-top: 8px; line-height: 1.5; }
+    .inst-hours {
+      margin-top: 10px;
+      display: inline-block;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 10px;
+    }
+
+    /* ── COMPLETION ── */
+    .completion-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .comp-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 28px 24px;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .comp-pct {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .comp-pct span { font-size: 1.4rem; }
+    .comp-type {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 8px;
+      color: var(--text);
+    }
+    .comp-desc { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .contact-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .contact-card .c-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .contact-card .c-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .contact-card .c-detail {
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .contact-card .c-phone {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 6px;
+    }
+    .address-card {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 14px;
+      padding: 24px;
+      grid-column: 1 / -1;
+    }
+    .address-card .c-label { color: rgba(255,255,255,0.65); }
+    .address-card .addr { font-size: 1rem; font-weight: 700; margin-top: 4px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d1f3c;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.82rem;
+    }
+    footer strong { color: #fff; }
+
+    /* ── NOTICE BANNER ── */
+    .notice {
+      background: linear-gradient(90deg, #fff8e1, #fffde7);
+      border: 1px solid #f39c12;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.85rem;
+      color: #7d5a0a;
+      margin-top: 20px;
+    }
+    .notice strong { color: #b7700a; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { gap: 0; overflow-x: auto; justify-content: flex-start; }
+      nav a { font-size: 0.78rem; padding: 12px 10px; }
+      .session-table, .tt-table { font-size: 0.75rem; }
+      .session-table th, .session-table td,
+      .tt-table th, .tt-table td { padding: 8px 5px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">경북대학교 AI융합교육대학원</div>
+  <h1>2026 <span>SW-AI교육</span><br>역량강화 연수</h1>
+  <p class="subtitle">디지털 센서 및 바이브 코딩 활용 AI융합교육 설계 역량 강화 연수</p>
+  <div class="hero-stats">
+    <div class="stat-box">
+      <div class="num">30h</div>
+      <div class="label">총 연수 시간</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">40명</div>
+      <div class="label">총 모집 인원</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">50만원</div>
+      <div class="label">1인당 연수 경비</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">8/10~12</div>
+      <div class="label">집합 연수 일정</div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#overview">연수 개요</a>
+  <a href="#goals">연수 목표</a>
+  <a href="#curriculum">교과 편성</a>
+  <a href="#timetable">세부 시간표</a>
+  <a href="#instructors">강사 명단</a>
+  <a href="#completion">이수 기준</a>
+  <a href="#contact">문의처</a>
+</nav>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="container">
+    <h2 class="section-title">연수 개요</h2>
+    <div class="overview-grid">
+      <div class="ov-card">
+        <div class="icon">👥</div>
+        <div class="ov-label">연수 대상</div>
+        <div class="ov-value">초·중등 교원 및 교육 전문직원</div>
+        <div class="ov-sub">기수별 20명 이내, 총 40명</div>
+      </div>
+      <div class="ov-card">
+        <div class="icon">⏱️</div>
+        <div class="ov-label">연수 시간</div>
+        <div class="ov-value">30시간 (5일)</div>
+        <div class="ov-sub">온라인 12h + 집합 18h</div>
+      </div>
+      <div class="ov-card">
+        <div class="icon">💰</div>
+        <div class="ov-label">연수 경비</div>
+        <div class="ov-value">50만원 (1인당)</div>
+        <div class="ov-sub">30시간 기준</div>
+      </div>
+      <div class="ov-card">
+        <div class="icon">🎓</div>
+        <div class="ov-label">연수 방법</div>
+        <div class="ov-value">블렌디드 연수</div>
+        <div class="ov-sub">비실시간 원격 + 집합</div>
+      </div>
+      <div class="ov-card">
+        <div class="icon">📍</div>
+        <div class="ov-label">연수 장소</div>
+        <div class="ov-value">경북대학교</div>
+        <div class="ov-sub">LMS · 제2과학관 130호 · 223호</div>
+      </div>
+      <div class="ov-card">
+        <div class="icon">📅</div>
+        <div class="ov-label">연수 기간</div>
+        <div class="ov-value">2026. 8. 3. ~ 8. 12.</div>
+        <div class="ov-sub">온라인 8/3~9 · 집합 8/10~12</div>
+      </div>
+    </div>
+
+    <!-- Session Schedule -->
+    <div style="margin-top: 28px; overflow-x: auto;">
+      <table class="session-table">
+        <thead>
+          <tr>
+            <th>기수</th>
+            <th>연수 일시</th>
+            <th>모집 인원</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1기</strong></td>
+            <td>2026. 8. 3.(월) ~ 2026. 8. 12.(수)</td>
+            <td><strong>20명</strong></td>
+            <td>제2과학관 130호</td>
+          </tr>
+          <tr>
+            <td><strong>2기</strong></td>
+            <td>2026. 8. 3.(월) ~ 2026. 8. 12.(수)</td>
+            <td><strong>20명</strong></td>
+            <td>제2과학관 223호</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="notice">
+      <strong>※ 안내:</strong> 과정별 <strong>15명 이하</strong> 모집 시 연수가 취소될 수 있으며,
+      <strong>20명 이상</strong> 모집 시 분반 또는 미선정하여 운영합니다.<br>
+      집합 연수 시 <strong>점심 및 다과 제공</strong>, 수강생 개인 노트북 지참 필수.
+    </div>
+  </div>
+</section>
+
+<!-- GOALS -->
+<section id="goals">
+  <div class="container">
+    <h2 class="section-title">연수 목표</h2>
+    <div class="goals-list">
+      <div class="goal-item">
+        <div class="g-num">1</div>
+        <div>디지털 센서를 활용한 AI융합교육 설계 및 실행 역량 강화</div>
+      </div>
+      <div class="goal-item">
+        <div class="g-num">2</div>
+        <div>바이브 코딩을 활용한 AI융합교육 설계 역량 강화</div>
+      </div>
+      <div class="goal-item">
+        <div class="g-num">3</div>
+        <div>디지털 센서 및 바이브코딩 활용 교수학습 자료 개발 및 공유</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="container">
+    <h2 class="section-title">교육과정별 교과 편성</h2>
+
+    <div style="overflow-x: auto; margin-bottom: 24px;">
+      <table class="session-table">
+        <thead>
+          <tr>
+            <th>강의 과목</th>
+            <th>주요 교육내용</th>
+            <th>시수</th>
+            <th>강의</th>
+            <th>참여</th>
+            <th>실습</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>디지털 기반의 AI융합교육</strong></td>
+            <td style="text-align:left;">· Data Science의 정의와 사례<br>· AI융합교육에서 Data와 AI의 활용 및 실제</td>
+            <td>3</td><td>2</td><td>1</td><td>-</td>
+          </tr>
+          <tr>
+            <td><strong>오렌지3를 활용한 AI융합교육</strong></td>
+            <td style="text-align:left;">· 오렌지3의 기본 기능 및 활용<br>· AI융합교육에서 오렌지3 활용 사례</td>
+            <td>3</td><td>2</td><td>1</td><td>-</td>
+          </tr>
+          <tr>
+            <td><strong>SW를 활용한 STEM/STEAM 교육의 이해와 적용 사례</strong></td>
+            <td style="text-align:left;">· STEM/STEAM 교육의 핵심 내용의 이해<br>· SW를 활용한 STEM/STEAM 교육의 교수·학습 및 사례 소개<br>· 3D 디자인 SW을 활용한 설계 기반 문제해결 사례</td>
+            <td>3</td><td>2</td><td>1</td><td>-</td>
+          </tr>
+          <tr>
+            <td><strong>VR을 활용한 실감형 AI융합교육</strong></td>
+            <td style="text-align:left;">· VR의 기본 개념 및 교육적 활용<br>· AI융합교육에서 VR 활용 사례</td>
+            <td>3</td><td>2</td><td>1</td><td>-</td>
+          </tr>
+          <tr>
+            <td><strong>AI융합교육의 방향과 과제</strong></td>
+            <td style="text-align:left;">· AI융합교육의 국제적 실천 동향<br>· AI융합교육의 현황과 향후 과제<br>· AI융합교육 사례</td>
+            <td>3</td><td>2</td><td>1</td><td>-</td>
+          </tr>
+          <tr>
+            <td><strong>피지컬AI 기반 AI융합교육의 실제</strong></td>
+            <td style="text-align:left;">· 데이터를 수집하기 위한 피지컬 컴퓨팅 소개<br>· 탐구 활동에서 데이터 분석 및 해석<br>· 과학실험에서 피지컬AI 적용</td>
+            <td>3</td><td>2</td><td>1</td><td>-</td>
+          </tr>
+          <tr>
+            <td><strong>디지털 센서 활용 풍력 발전기 만들기</strong></td>
+            <td style="text-align:left;">· 디지털 센서 활용의 기초<br>· 데이터를 활용한 풍력 발전기 제작 개선</td>
+            <td>3</td><td>1</td><td>-</td><td>2</td>
+          </tr>
+          <tr>
+            <td><strong>디지털 센서 활용 내진설계 구조물 만들기</strong></td>
+            <td style="text-align:left;">· 디지털 센서 활용의 기초<br>· 데이터를 활용한 내진설계 구조물 제작 및 개선</td>
+            <td>3</td><td>1</td><td>-</td><td>2</td>
+          </tr>
+          <tr>
+            <td><strong>Human-AI Agency를 위한 수업 설계</strong></td>
+            <td style="text-align:left;">· Human-AI Agency의 개념 및 원리<br>· AI 오케스트레이션 적용 수업설계</td>
+            <td>3</td><td>1</td><td>-</td><td>2</td>
+          </tr>
+          <tr>
+            <td><strong>바이브 코딩 활용 수업·평가 콘텐츠 설계</strong></td>
+            <td style="text-align:left;">· AI STUDIO를 활용한 바이브 코딩 실습<br>· 수업 및 평가를 위한 콘텐츠 개발 실습</td>
+            <td>3</td><td>1</td><td>-</td><td>2</td>
+          </tr>
+          <tr class="total-row">
+            <td colspan="2">과정별 총 이수 시간</td>
+            <td>30</td><td>16</td><td>6</td><td>8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <span class="tag tag-lecture" style="font-size:0.82rem; padding:5px 14px;">강의 16h</span>
+      <span class="tag tag-participate" style="font-size:0.82rem; padding:5px 14px;">참여 6h</span>
+      <span class="tag tag-practice" style="font-size:0.82rem; padding:5px 14px;">실습 8h</span>
+    </div>
+  </div>
+</section>
+
+<!-- TIMETABLE -->
+<section id="timetable">
+  <div class="container">
+    <h2 class="section-title">세부 시간표</h2>
+
+    <div class="tt-tabs">
+      <button class="tt-tab active" onclick="showTab('online', this)">온라인 연수 (공통)</button>
+      <button class="tt-tab" onclick="showTab('group1', this)">집합 연수 — 1기</button>
+      <button class="tt-tab" onclick="showTab('group2', this)">집합 연수 — 2기</button>
+    </div>
+
+    <!-- Online -->
+    <div id="online" class="tt-panel active">
+      <span class="online-badge">온라인 · LMS</span>
+      <div style="overflow-x:auto;">
+        <table class="tt-table">
+          <thead>
+            <tr>
+              <th>일정</th>
+              <th colspan="2">1~2교시</th>
+              <th colspan="2">3~4교시</th>
+              <th colspan="2">5~6교시</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="day-cell">8월 3일(월)<br>~ 8월 9일(일)<br><small style="font-weight:400;">(상시 수강)</small></td>
+              <td colspan="2" class="lecture-cell">
+                <strong>디지털 기반의 AI 융합교육</strong>
+                <span>한국교원대 권용주</span>
+              </td>
+              <td colspan="2" class="lecture-cell">
+                <strong>SW를 활용한 STEM/STEAM 교육의 이해와 적용 사례</strong>
+                <span>경북대 이효녕</span>
+              </td>
+              <td colspan="2" class="lecture-cell">
+                <strong>오렌지3를 활용한 AI융합교육</strong>
+                <span>서울교동초 정유미</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="day-cell"></td>
+              <td colspan="6" class="lecture-cell">
+                <strong>VR을 활용한 실감형 AI융합교육</strong>
+                <span>서울길원초 최섭</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">비대면 온라인 강의(동영상): 경북대학교 학습관리시스템(LMS) — 해당 기간 상시 수강</div>
+    </div>
+
+    <!-- Group 1 -->
+    <div id="group1" class="tt-panel">
+      <span class="gather-badge">집합 · 1기 (20명) · 제2과학관 130호</span>
+      <div style="overflow-x:auto;">
+        <table class="tt-table">
+          <thead>
+            <tr>
+              <th>일</th>
+              <th>준비<br>09:00~</th>
+              <th>1교시<br>09:30~10:20</th>
+              <th>2교시<br>10:30~11:20</th>
+              <th>3교시<br>11:30~12:20</th>
+              <th>점심<br>12:20~13:30</th>
+              <th>4교시<br>13:30~14:20</th>
+              <th>5교시<br>14:30~15:20</th>
+              <th>6교시<br>15:30~16:20</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="day-cell">1일차<br><small>(8/10)</small></td>
+              <td class="prep-cell">등록<br>개강식</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>AI융합교육의 방향과 과제</strong>
+                <span>공주대 권혁수</span>
+              </td>
+              <td class="lunch-cell">점심</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>피지컬AI 기반 AI융합교육의 실제</strong>
+                <span>천재교육 김황</span>
+              </td>
+            </tr>
+            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 130호</td></tr>
+            <tr>
+              <td class="day-cell">2일차<br><small>(8/11)</small></td>
+              <td class="prep-cell">등록</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>디지털 센서 활용 풍력 발전기 만들기</strong>
+                <span>구미산동고 엄흥진</span>
+              </td>
+              <td class="lunch-cell">점심</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>디지털 센서 활용 내진설계 구조물 만들기</strong>
+                <span>오성중 이봉규</span>
+              </td>
+            </tr>
+            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 130호</td></tr>
+            <tr>
+              <td class="day-cell">3일차<br><small>(8/12)</small></td>
+              <td class="prep-cell">등록</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>Human-AI Agency를 위한 수업 설계</strong>
+                <span>경북대 이동국</span>
+              </td>
+              <td class="lunch-cell">점심</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>바이브 코딩 활용 수업·평가 콘텐츠 설계</strong>
+                <span>대륜고 홍대화</span>
+              </td>
+            </tr>
+            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 130호</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Group 2 -->
+    <div id="group2" class="tt-panel">
+      <span class="gather-badge">집합 · 2기 (20명) · 제2과학관 223호</span>
+      <div style="overflow-x:auto;">
+        <table class="tt-table">
+          <thead>
+            <tr>
+              <th>일</th>
+              <th>준비<br>09:00~</th>
+              <th>1교시<br>09:30~10:20</th>
+              <th>2교시<br>10:30~11:20</th>
+              <th>3교시<br>11:30~12:20</th>
+              <th>점심<br>12:20~13:30</th>
+              <th>4교시<br>13:30~14:20</th>
+              <th>5교시<br>14:30~15:20</th>
+              <th>6교시<br>15:30~16:20</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="day-cell">1일차<br><small>(8/10)</small></td>
+              <td class="prep-cell">등록<br>개강식</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>피지컬AI 기반 AI융합교육의 실제</strong>
+                <span>천재교육 김황</span>
+              </td>
+              <td class="lunch-cell">점심</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>AI융합교육의 방향과 과제</strong>
+                <span>공주대 권혁수</span>
+              </td>
+            </tr>
+            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 223호</td></tr>
+            <tr>
+              <td class="day-cell">2일차<br><small>(8/11)</small></td>
+              <td class="prep-cell">등록</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>디지털 센서 활용 내진설계 구조물 만들기</strong>
+                <span>오성중 이봉규</span>
+              </td>
+              <td class="lunch-cell">점심</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>디지털 센서 활용 풍력 발전기 만들기</strong>
+                <span>구미산동고 엄흥진</span>
+              </td>
+            </tr>
+            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 223호</td></tr>
+            <tr>
+              <td class="day-cell">3일차<br><small>(8/12)</small></td>
+              <td class="prep-cell">등록</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>바이브 코딩 활용 수업·평가 콘텐츠 설계</strong>
+                <span>대륜고 홍대화</span>
+              </td>
+              <td class="lunch-cell">점심</td>
+              <td colspan="3" class="lecture-cell">
+                <strong>Human-AI Agency를 위한 수업 설계</strong>
+                <span>경북대 이동국</span>
+              </td>
+            </tr>
+            <tr class="room-row"><td colspan="9">📍 경북대학교 제2과학관 223호</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:16px;">※ 강의 일정과 강사는 사정에 따라 변경될 수 있습니다.</div>
+  </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section id="instructors">
+  <div class="container">
+    <h2 class="section-title">과목별 강사 명단</h2>
+    <div class="instructor-grid">
+      <div class="inst-card">
+        <div class="inst-avatar">권</div>
+        <div class="inst-name">권용주</div>
+        <div class="inst-rank">교수 · 박사</div>
+        <div class="inst-subject">디지털 기반의 AI융합교육<br><small style="color:#999;">한국교원대학교</small></div>
+        <div class="inst-hours">3시간</div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-avatar">정</div>
+        <div class="inst-name">정유미</div>
+        <div class="inst-rank">교사 · 석사</div>
+        <div class="inst-subject">오렌지3를 활용한 AI융합교육<br><small style="color:#999;">서울교동초등학교</small></div>
+        <div class="inst-hours">3시간</div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-avatar">이</div>
+        <div class="inst-name">이효녕</div>
+        <div class="inst-rank">교수 · 박사</div>
+        <div class="inst-subject">SW를 활용한 STEM/STEAM 교육의 이해와 적용 사례<br><small style="color:#999;">경북대학교</small></div>
+        <div class="inst-hours">3시간</div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-avatar">최</div>
+        <div class="inst-name">최섭</div>
+        <div class="inst-rank">교사 · 박사</div>
+        <div class="inst-subject">VR을 활용한 실감형 AI융합교육<br><small style="color:#999;">서울길원초등학교</small></div>
+        <div class="inst-hours">3시간</div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-avatar">권</div>
+        <div class="inst-name">권혁수</div>
+        <div class="inst-rank">교수 · 박사</div>
+        <div class="inst-subject">AI융합교육의 방향과 과제<br><small style="color:#999;">공주대학교</small></div>
+        <div class="inst-hours">6시간</div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-avatar">김</div>
+        <div class="inst-name">김황</div>
+        <div class="inst-rank">본부장 · 석사</div>
+        <div class="inst-subject">피지컬AI 기반 AI융합교육의 실제<br><small style="color:#999;">천재교육</small></div>
+        <div class="inst-hours">6시간</div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-avatar">엄</div>
+        <div class="inst-name">엄흥진</div>
+        <div class="inst-rank">교사 · 박사</div>
+        <div class="inst-subject">디지털 센서 활용 풍력 발전기 만들기<br><small style="color:#999;">구미산동고등학교</small></div>
+        <div class="inst-hours">6시간</div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-avatar">박</div>
+        <div class="inst-name">박병준</div>
+        <div class="inst-rank">교사 · 석사</div>
+        <div class="inst-subject">디지털 센서 활용 내진설계 구조물 만들기<br><small style="color:#999;">오성중학교</small></div>
+        <div class="inst-hours">6시간</div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-avatar">이</div>
+        <div class="inst-name">이동국</div>
+        <div class="inst-rank">교수 · 박사</div>
+        <div class="inst-subject">Human-AI Agency를 위한 수업 설계<br><small style="color:#999;">경북대학교</small></div>
+        <div class="inst-hours">6시간</div>
+      </div>
+      <div class="inst-card">
+        <div class="inst-avatar">이</div>
+        <div class="inst-name">이봉규</div>
+        <div class="inst-rank">교사 · 박사</div>
+        <div class="inst-subject">바이브 코딩 활용 수업·평가 콘텐츠 설계<br><small style="color:#999;">대륜고등학교</small></div>
+        <div class="inst-hours">6시간</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLETION -->
+<section id="completion">
+  <div class="container">
+    <h2 class="section-title">이수 기준</h2>
+    <div class="completion-cards">
+      <div class="comp-card">
+        <div class="comp-pct">80<span>%</span></div>
+        <div class="comp-type">집합 연수</div>
+        <div class="comp-desc">출석률 80% 이상 시 이수 인정</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-pct">90<span>%</span></div>
+        <div class="comp-type">실시간쌍방향원격연수</div>
+        <div class="comp-desc">출석률 90% 이상 시 이수 인정</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">연수 안내 및 문의처</h2>
+
+    <h3 style="font-size:1rem; color:var(--primary); margin-bottom:14px; font-weight:700;">수강 준비 및 태도</h3>
+    <div style="background:var(--card); border-radius:14px; padding:20px 24px; border:1px solid var(--border); margin-bottom:28px;">
+      <ul style="padding-left:18px; font-size:0.9rem; line-height:2;">
+        <li>개인 노트북 지참 (필수)</li>
+        <li>강의 시간에는 지정된 좌석에서 수강한다 (무단 이석 금지).</li>
+        <li>공중도덕과 질서를 지켜야 하며, 차량은 지정된 장소에 주차한다.</li>
+        <li>화재 예방에 유의하고, 비상 탈출구를 숙지한다.</li>
+        <li>감염병 관련 준수 사항 및 개인 위생 관련 수칙을 준수한다.</li>
+      </ul>
+    </div>
+
+    <h3 style="font-size:1rem; color:var(--primary); margin-bottom:14px; font-weight:700;">문의처</h3>
+    <div class="contact-grid">
+      <div class="address-card">
+        <div class="c-label">연수 장소 주소</div>
+        <div class="addr">대구광역시 북구 대학로 80 경북대학교 교육연수원</div>
+      </div>
+      <div class="contact-card">
+        <div class="c-label">연수 행정 관련 문의</div>
+        <div class="c-name">김성룡 주무관</div>
+        <div class="c-detail">경북대학교 교육연수원</div>
+        <div class="c-phone">📞 053-950-6899</div>
+      </div>
+      <div class="contact-card">
+        <div class="c-label">연수 운영 관련 문의</div>
+        <div class="c-name">이혜영 주무관</div>
+        <div class="c-detail">AI융합교육전공 사무실</div>
+        <div class="c-phone">📞 053-950-5916</div>
+      </div>
+      <div class="contact-card">
+        <div class="c-label">연수 책임 교수</div>
+        <div class="c-name">이효녕 교수</div>
+        <div class="c-detail">경북대학교 교육대학원<br>AI융합교육전공</div>
+        <div class="c-phone">📞 053-950-5917</div>
+      </div>
+      <div class="contact-card">
+        <div class="c-label">연수 운영 교수</div>
+        <div class="c-name">이동국 교수</div>
+        <div class="c-detail">경북대학교 사범대학<br>정보·컴퓨터교육과</div>
+        <div class="c-phone">📞 053-950-5845</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>2026년 AI융합교육대학원 연계 SW-AI교육 역량강화 연수</strong><br>
+  경북대학교 교육대학원 AI융합교육전공 · 대구광역시 북구 대학로 80
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.tt-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tt-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
