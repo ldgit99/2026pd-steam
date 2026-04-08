@@ -398,45 +398,35 @@
       border-radius: 0 8px 8px 0;
     }
 
-    /* ── INSTRUCTORS ── */
-    .instructor-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 14px;
-    }
-    .inst-card {
+    /* ── OVERVIEW BULLETS ── */
+    .overview-bullets {
+      list-style: none;
       background: var(--card);
       border-radius: 14px;
-      padding: 20px;
+      padding: 12px 24px;
       border: 1px solid var(--border);
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      text-align: center;
     }
-    .inst-avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), #2255a4);
-      color: #fff;
-      font-size: 1.3rem;
-      font-weight: 800;
+    .overview-bullets li {
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 12px;
+      align-items: baseline;
+      gap: 10px;
     }
-    .inst-name { font-weight: 800; font-size: 1rem; color: var(--primary); }
-    .inst-rank { font-size: 0.8rem; color: var(--muted); margin: 2px 0; }
-    .inst-subject { font-size: 0.78rem; color: var(--text); margin-top: 8px; line-height: 1.5; }
-    .inst-hours {
-      margin-top: 10px;
-      display: inline-block;
-      background: #eff6ff;
-      color: #1d4ed8;
-      font-size: 0.75rem;
+    .overview-bullets li:last-child { border-bottom: none; }
+    .overview-bullets li::before {
+      content: '◦';
+      color: var(--primary);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .ob-key {
       font-weight: 700;
-      padding: 2px 10px;
-      border-radius: 10px;
+      color: var(--primary);
+      white-space: nowrap;
+      min-width: 90px;
     }
 
     /* ── COMPLETION ── */
@@ -580,7 +570,6 @@
   <a href="#goals">연수 목표</a>
   <a href="#curriculum">교과 편성</a>
   <a href="#timetable">세부 시간표</a>
-  <a href="#instructors">강사 명단</a>
   <a href="#completion">이수 기준</a>
   <a href="#contact">문의처</a>
 </nav>
@@ -589,44 +578,15 @@
 <section id="overview">
   <div class="container">
     <h2 class="section-title">연수 개요</h2>
-    <div class="overview-grid">
-      <div class="ov-card">
-        <div class="icon">👥</div>
-        <div class="ov-label">연수 대상</div>
-        <div class="ov-value">초·중등 교원 및 교육 전문직원</div>
-        <div class="ov-sub">기수별 20명 이내, 총 40명</div>
-      </div>
-      <div class="ov-card">
-        <div class="icon">⏱️</div>
-        <div class="ov-label">연수 시간</div>
-        <div class="ov-value">30시간 (5일)</div>
-        <div class="ov-sub">온라인 12h + 집합 18h</div>
-      </div>
-      <div class="ov-card">
-        <div class="icon">💰</div>
-        <div class="ov-label">연수 경비</div>
-        <div class="ov-value">50만원 (1인당)</div>
-        <div class="ov-sub">30시간 기준</div>
-      </div>
-      <div class="ov-card">
-        <div class="icon">🎓</div>
-        <div class="ov-label">연수 방법</div>
-        <div class="ov-value">블렌디드 연수</div>
-        <div class="ov-sub">비실시간 원격 + 집합</div>
-      </div>
-      <div class="ov-card">
-        <div class="icon">📍</div>
-        <div class="ov-label">연수 장소</div>
-        <div class="ov-value">경북대학교</div>
-        <div class="ov-sub">LMS · 제2과학관 130호 · 223호</div>
-      </div>
-      <div class="ov-card">
-        <div class="icon">📅</div>
-        <div class="ov-label">연수 기간</div>
-        <div class="ov-value">2026. 8. 3. ~ 8. 12.</div>
-        <div class="ov-sub">온라인 8/3~9 · 집합 8/10~12</div>
-      </div>
-    </div>
+    <ul class="overview-bullets">
+      <li><span class="ob-key">연수 과정명</span> 디지털 센서 및 바이브 코딩 활용 AI융합교육 설계 역량 강화 연수</li>
+      <li><span class="ob-key">연수 대상</span> 초·중등학교 교원 및 교육 전문직원 40명 (기수별 20명 이내)</li>
+      <li><span class="ob-key">연수 시간</span> 30시간 (5일)</li>
+      <li><span class="ob-key">연수 경비</span> 1인당 50만원 (30시간 기준)</li>
+      <li><span class="ob-key">연수 방법</span> 블렌디드 연수 (비실시간 원격 + 집합)</li>
+      <li><span class="ob-key">연수 장소</span> 경북대학교 LMS · 제2과학관 130호, 223호</li>
+      <li><span class="ob-key">연수 기간</span> 2026. 8. 3.(월) ~ 2026. 8. 12.(수)</li>
+    </ul>
 
     <!-- Session Schedule -->
     <div style="margin-top: 28px; overflow-x: auto;">
@@ -954,85 +914,6 @@
     </div>
 
     <div class="note" style="margin-top:16px;">※ 강의 일정과 강사는 사정에 따라 변경될 수 있습니다.</div>
-  </div>
-</section>
-
-<!-- INSTRUCTORS -->
-<section id="instructors">
-  <div class="container">
-    <h2 class="section-title">과목별 강사 명단</h2>
-    <div class="instructor-grid">
-      <div class="inst-card">
-        <div class="inst-avatar">권</div>
-        <div class="inst-name">권용주</div>
-        <div class="inst-rank">교수 · 박사</div>
-        <div class="inst-subject">디지털 기반의 AI융합교육<br><small style="color:#999;">한국교원대학교</small></div>
-        <div class="inst-hours">3시간</div>
-      </div>
-      <div class="inst-card">
-        <div class="inst-avatar">정</div>
-        <div class="inst-name">정유미</div>
-        <div class="inst-rank">교사 · 석사</div>
-        <div class="inst-subject">오렌지3를 활용한 AI융합교육<br><small style="color:#999;">서울교동초등학교</small></div>
-        <div class="inst-hours">3시간</div>
-      </div>
-      <div class="inst-card">
-        <div class="inst-avatar">이</div>
-        <div class="inst-name">이효녕</div>
-        <div class="inst-rank">교수 · 박사</div>
-        <div class="inst-subject">SW를 활용한 STEM/STEAM 교육의 이해와 적용 사례<br><small style="color:#999;">경북대학교</small></div>
-        <div class="inst-hours">3시간</div>
-      </div>
-      <div class="inst-card">
-        <div class="inst-avatar">최</div>
-        <div class="inst-name">최섭</div>
-        <div class="inst-rank">교사 · 박사</div>
-        <div class="inst-subject">VR을 활용한 실감형 AI융합교육<br><small style="color:#999;">서울길원초등학교</small></div>
-        <div class="inst-hours">3시간</div>
-      </div>
-      <div class="inst-card">
-        <div class="inst-avatar">권</div>
-        <div class="inst-name">권혁수</div>
-        <div class="inst-rank">교수 · 박사</div>
-        <div class="inst-subject">AI융합교육의 방향과 과제<br><small style="color:#999;">공주대학교</small></div>
-        <div class="inst-hours">6시간</div>
-      </div>
-      <div class="inst-card">
-        <div class="inst-avatar">김</div>
-        <div class="inst-name">김황</div>
-        <div class="inst-rank">본부장 · 석사</div>
-        <div class="inst-subject">피지컬AI 기반 AI융합교육의 실제<br><small style="color:#999;">천재교육</small></div>
-        <div class="inst-hours">6시간</div>
-      </div>
-      <div class="inst-card">
-        <div class="inst-avatar">엄</div>
-        <div class="inst-name">엄흥진</div>
-        <div class="inst-rank">교사 · 박사</div>
-        <div class="inst-subject">디지털 센서 활용 풍력 발전기 만들기<br><small style="color:#999;">구미산동고등학교</small></div>
-        <div class="inst-hours">6시간</div>
-      </div>
-      <div class="inst-card">
-        <div class="inst-avatar">박</div>
-        <div class="inst-name">박병준</div>
-        <div class="inst-rank">교사 · 석사</div>
-        <div class="inst-subject">디지털 센서 활용 내진설계 구조물 만들기<br><small style="color:#999;">오성중학교</small></div>
-        <div class="inst-hours">6시간</div>
-      </div>
-      <div class="inst-card">
-        <div class="inst-avatar">이</div>
-        <div class="inst-name">이동국</div>
-        <div class="inst-rank">교수 · 박사</div>
-        <div class="inst-subject">Human-AI Agency를 위한 수업 설계<br><small style="color:#999;">경북대학교</small></div>
-        <div class="inst-hours">6시간</div>
-      </div>
-      <div class="inst-card">
-        <div class="inst-avatar">이</div>
-        <div class="inst-name">이봉규</div>
-        <div class="inst-rank">교사 · 박사</div>
-        <div class="inst-subject">바이브 코딩 활용 수업·평가 콘텐츠 설계<br><small style="color:#999;">대륜고등학교</small></div>
-        <div class="inst-hours">6시간</div>
-      </div>
-    </div>
   </div>
 </section>
 
